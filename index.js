@@ -5,6 +5,11 @@ const client = new Client({ intents: 513 });
 client.commands = new Collection();
 
 
-['CommandUtil', 'EventUtil'].forEach(handler => {require(`./utils/handlers/${handler}`)(client)})
+['CommandUtil', 'EventUtil'].forEach(handler => {require(`./utils/handlers/${handler}`)(client)});
+
+process.on('exit', code => { console.log(`Le processus s'est arreter avec le code: ${code}`)});
+process.on('uncaughtException', (err, origin) => { console.log(`UNCAUGHT_EXCEPTION: ${errr}`, `Origine: ${origin}`)});
+process.on('unhandledRejection', (reason, promise) => { console.log(`UNHANDLED_REJECTIO: ${reason}\n-----\n , promise`)});
+process.on('warning', (...args) => console.log(...args));
 
 client.login(process.env.TOKEN);
