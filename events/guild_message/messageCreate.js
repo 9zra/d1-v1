@@ -1,7 +1,7 @@
 const prefix = 'n!';
 
 module.exports = {
-    name: 'messageCreate',
+    name: "messageCreate",
     once: false,
     execute(client, message) {
         if (message.author.bot) return;
