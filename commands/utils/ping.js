@@ -19,8 +19,7 @@ module.exports = {
     },
     runSlash: (client, interaction) => {
         const embed = new MessageEmbed()
-            .setTitle('Pong')
-            .setURL('https://google.com')
+            .setTitle(':ping_pong: Pong')
             .setThumbnail(client.user.displayAvatarURL())
             .addFields(
                 { name: 'Latence', value: `\`${client.ws.ping}ms\``, inline: true },
