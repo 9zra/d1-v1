@@ -4,7 +4,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
     name: 'ping',
     description: 'ping',
-    run: (client, message, args) => {
+    run(client, message, args) {
         const embed = new MessageEmbed()
         .setTitle('test')
         
@@ -17,7 +17,7 @@ module.exports = {
         .setFooter({text: message.author.username, iconURL: message.author.displayAvatarURL()});
         message.channel.send({embeds: [embed] });
     },
-    runSlash: (client, interaction) => {
+    runSlash(client, interaction) {
         const embed = new MessageEmbed()
             .setTitle(':ping_pong: Pong')
             .setThumbnail(client.user.displayAvatarURL())

@@ -16,10 +16,12 @@ module.exports = {
         const embed = new MessageEmbed()
             .setAuthor({ name: `${member.user.tag} (${member.id})`, iconURL: member.user.displayAvatarURL() })
             .setColor("RED")
-            .setDescription(`• Nom d'utilisateur: \`${member.user.tag}\` (${member.id})
+            .setDescription(`
+            • Nom d'utilisateur: \`${member.user.tag}\` (${member.id})
             • Créé le : ${creationTimestamp} (${relativeCreationTimestamp})
             • Rejoint le: ${joinTimestamp} (${relativeJoinTimestamp})
             • Quitté le: ${leftTimestamp} (${relativeLeftTimestamp})
+            
             `)
             .setTimestamp()
             .setFooter({ text: 'L\'utilisateur a rejoint!' });

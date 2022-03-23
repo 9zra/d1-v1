@@ -1,9 +1,11 @@
 const { Client, Collection } = require('discord.js');
 const dotenv = require('dotenv'); dotenv.config();
 const client = new Client({ intents: 515 });
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 client.commands = new Collection();
+
+
 
 
 ['CommandUtil', 'EventUtil'].forEach(handler => {require(`./utils/handlers/${handler}`)(client)});
@@ -20,6 +22,6 @@ mongoose.connect(process.env.DATABASE_URI, {
     socketTimeoutMS: 45000, 
     family: 4 
 }).then(() => { console.log('Le client est connecté à la base de données ! ') })
-.catch(err => { console.log(err) })
+.catch(err => { console.log(err) });
 
 client.login(process.env.TOKEN);
