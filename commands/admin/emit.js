@@ -9,7 +9,7 @@ module.exports = {
             message.reply('Event guildMemberAdd émit!');
         } else if (args[0] == 'guildCreate') {
             client.emit('guildCreate', message.guild);
-            message.reply('Event guilCreate émit!');
+            message.reply('Event guildCreate émit!');
         } else {
             client.emit('guildMemberRemove', message.member);
             message.reply('Event guildMemberRemove émit!');
@@ -32,13 +32,13 @@ module.exports = {
                 },
                 {
                     name: 'guildCreate',
-                    value: 'guildCreate'
+                    value: 'guildCreate',
                 }
             ],
         }
     ],
     
-    runSlash(client, interaction) {
+    runInteraction(client, interaction) {
         const evtChoices = interaction.options.getString('event');
 
         if (evtChoices == 'guildMemberAdd') {
