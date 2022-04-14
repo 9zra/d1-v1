@@ -3,7 +3,12 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: 'poll',
-    description: 'sondage',
+    category: 'utils',
+    permissions: ['ADMINISTRATOR'],
+    ownerOnly: false,
+    usage: 'poll [question]',
+    examples: ['poll', 'poll Je suis beau ?'],
+    description: 'Poster votre propre sondage',
     async run(client, message, args) {
         if (!args[0]) return message.reply('entrer du contenu pour le sondage');
 

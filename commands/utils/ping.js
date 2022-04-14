@@ -3,7 +3,12 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: 'ping',
-    description: 'ping',
+    category: 'utils',
+    permissions: ['SEND_MESSAGES'],
+    ownerOnly: false,
+    usage: 'ping',
+    examples: ['ping'],
+    description: "La commande ping donne la latence du bot et de l'API de discord",
     async run(client, message, args) {
         const tryPong = await message.channel.send("On esseye de pong... un instant!");
 

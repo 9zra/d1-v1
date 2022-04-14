@@ -1,8 +1,13 @@
 module.exports = {
     name: 'emit',
-    description: 'emettre un evenement',
+    category: 'admin',
+    permissions: ['ADMINISTRATOR'],
+    ownerOnly: true,
+    usage: 'emit [eventName]',
+    examples: ['emit', 'emit guildCreate'],
+    description: 'emettre un evenement de votre choix!',
     run(client, message, args) {
-        if (!args[0] || !args[0].match(/^(guildMemberAdd|guildMemberRemove)$/)) return message.reply('Merci d\'entrer un événement valide (\`guildMemberAdd\`/\`guildMemberRemove\`)');
+        if (!args[0] || !args[0].match(/^(guildMemberAdd|guildMemberRemove|guildCreate)$/)) return message.reply('Merci d\'entrer un événement valide (\`guildMemberAdd\`/\`guildMemberRemove\`/\`guildCreate\`)');
 
         if (args[0] == 'guildMemberAdd') {
             client.emit('guildMemberAdd', message.member);

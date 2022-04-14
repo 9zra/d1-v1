@@ -3,6 +3,11 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: 'userinfo',
+    category: 'contextuel',
+    permissions: ['SEND_MESSAGES'],
+    ownerOnly: false,
+    usage: 'utliser le menu contextuel de discord',
+    examples: ['utliser le menu contextuel de discord'],
     type: 'USER',
     async runInteraction(client, interaction) {
         const member = await interaction.guild.members.fetch(interaction.targetId);
